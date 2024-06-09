@@ -23,8 +23,6 @@ jobs:
 
       - run: pip install git+https://github.com/royaurelien/pyhub.git@main
 
-      - run: ls -al
-
       - name: Fetch tags
         shell: bash
         env:
@@ -37,7 +35,6 @@ jobs:
           -f name -f full_size -f tag_last_pulled -f tag_last_pushed \
           -o json)
 
-          echo "$result"
           echo "$result" > ./tags.json
 
       - name: Commit & Push changes
