@@ -8,7 +8,7 @@
     {
         "name": "17-20240612",
         "full_size": 637170546,
-        "tag_last_pulled": null,
+        "tag_last_pulled": "2024-06-13T16:26:44.277948Z",
         "tag_last_pushed": "2024-06-12T16:25:47.162343Z"
     },
     {
@@ -260,7 +260,7 @@
     {
         "name": "16-20231111-enterprise-legacy",
         "full_size": 762150241,
-        "tag_last_pulled": null,
+        "tag_last_pulled": "2024-06-13T13:31:59.405934Z",
         "tag_last_pushed": "2024-05-30T15:50:49.722641Z"
     },
     {
@@ -320,7 +320,7 @@
     {
         "name": "17-20240501",
         "full_size": 637415996,
-        "tag_last_pulled": "2024-06-13T08:37:04.496581Z",
+        "tag_last_pulled": "2024-06-13T18:24:50.882226Z",
         "tag_last_pushed": "2024-05-01T00:11:52.388731Z"
     },
     {
