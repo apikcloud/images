@@ -2,7 +2,7 @@
     {
         "name": "11-20210922-enterprise-legacy",
         "full_size": 526349892,
-        "tag_last_pulled": null,
+        "tag_last_pulled": "2024-06-21T14:04:22.100435Z",
         "tag_last_pushed": "2024-06-20T13:42:52.192435Z"
     },
     {
@@ -38,19 +38,19 @@
     {
         "name": "12-20210528-enterprise-legacy",
         "full_size": 662960872,
-        "tag_last_pulled": null,
+        "tag_last_pulled": "2024-06-21T14:01:41.34828Z",
         "tag_last_pushed": "2024-06-20T13:33:13.445737Z"
     },
     {
         "name": "12-20210528-legacy",
         "full_size": 622532749,
-        "tag_last_pulled": null,
+        "tag_last_pulled": "2024-06-21T14:01:11.534572Z",
         "tag_last_pushed": "2024-06-20T13:33:07.990851Z"
     },
     {
         "name": "13-20220523-enterprise-legacy",
         "full_size": 697261233,
-        "tag_last_pulled": "2024-06-21T09:49:53.625951Z",
+        "tag_last_pulled": "2024-06-21T13:56:38.539105Z",
         "tag_last_pushed": "2024-06-20T13:32:41.472484Z"
     },
     {
@@ -110,13 +110,13 @@
     {
         "name": "14-20220523-legacy",
         "full_size": 634235720,
-        "tag_last_pulled": "2024-06-20T22:29:57.925327Z",
+        "tag_last_pulled": "2024-06-21T13:43:53.438883Z",
         "tag_last_pushed": "2024-06-20T13:28:58.445688Z"
     },
     {
         "name": "14-20220523-enterprise-legacy",
         "full_size": 698685998,
-        "tag_last_pulled": "2024-06-21T09:37:14.132722Z",
+        "tag_last_pulled": "2024-06-21T13:43:24.464028Z",
         "tag_last_pushed": "2024-06-20T13:28:57.460306Z"
     },
     {
@@ -266,7 +266,7 @@
     {
         "name": "15-20240601-enterprise",
         "full_size": 751777571,
-        "tag_last_pulled": "2024-06-20T19:11:45.40822Z",
+        "tag_last_pulled": "2024-06-21T15:58:14.48819Z",
         "tag_last_pushed": "2024-06-20T13:03:23.118689Z"
     },
     {
@@ -296,7 +296,7 @@
     {
         "name": "17-20240601",
         "full_size": 636770591,
-        "tag_last_pulled": null,
+        "tag_last_pulled": "2024-06-21T14:07:30.659569Z",
         "tag_last_pushed": "2024-06-20T12:57:39.634059Z"
     },
     {
@@ -308,7 +308,7 @@
     {
         "name": "17-20240612",
         "full_size": 637170546,
-        "tag_last_pulled": "2024-06-21T12:19:53.812162Z",
+        "tag_last_pulled": "2024-06-21T16:51:56.920439Z",
         "tag_last_pushed": "2024-06-12T16:25:47.162343Z"
     },
     {
