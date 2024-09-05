@@ -74,7 +74,7 @@
     {
         "name": "12-20211006-legacy",
         "full_size": 622619223,
-        "tag_last_pulled": "2024-08-16T14:06:26.769791Z",
+        "tag_last_pulled": "2024-09-05T07:37:20.731254Z",
         "tag_last_pushed": "2024-08-16T13:27:12.62187Z"
     },
     {
@@ -86,7 +86,7 @@
     {
         "name": "13-20220523-legacy",
         "full_size": 646364368,
-        "tag_last_pulled": "2024-08-16T14:05:49.222015Z",
+        "tag_last_pulled": "2024-09-05T12:30:33.951259Z",
         "tag_last_pushed": "2024-08-16T13:19:11.059856Z"
     },
     {
@@ -176,7 +176,7 @@
     {
         "name": "15-20220413-enterprise-legacy",
         "full_size": 723378807,
-        "tag_last_pulled": "2024-08-26T08:57:11.628755Z",
+        "tag_last_pulled": "2024-09-05T09:30:46.416782Z",
         "tag_last_pushed": "2024-08-16T13:00:41.461819Z"
     },
     {
@@ -314,7 +314,7 @@
     {
         "name": "16-20230719-legacy",
         "full_size": 685221044,
-        "tag_last_pulled": null,
+        "tag_last_pulled": "2024-09-05T07:44:46.063067Z",
         "tag_last_pushed": "2024-08-16T12:51:40.214171Z"
     },
     {
