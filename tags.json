@@ -104,7 +104,7 @@
     {
         "name": "16-20240801",
         "full_size": 631527982,
-        "tag_last_pulled": null,
+        "tag_last_pulled": "2024-09-12T12:55:04.332572Z",
         "tag_last_pushed": "2024-09-09T15:14:38.186599Z"
     },
     {
@@ -182,7 +182,7 @@
     {
         "name": "17-20240901-enterprise",
         "full_size": 847226776,
-        "tag_last_pulled": "2024-09-11T06:50:56.369055Z",
+        "tag_last_pulled": "2024-09-12T12:31:07.501237Z",
         "tag_last_pushed": "2024-09-09T15:11:09.07581Z"
     },
     {
