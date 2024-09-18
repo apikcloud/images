@@ -2,7 +2,7 @@
     {
         "name": "17-20240915-enterprise",
         "full_size": 848953042,
-        "tag_last_pulled": "2024-09-16T14:59:18.603207Z",
+        "tag_last_pulled": "2024-09-17T13:45:50.475369Z",
         "tag_last_pushed": "2024-09-15T00:11:57.476959Z"
     },
     {
@@ -14,7 +14,7 @@
     {
         "name": "17-20240915",
         "full_size": 674089139,
-        "tag_last_pulled": null,
+        "tag_last_pulled": "2024-09-17T15:26:02.604789Z",
         "tag_last_pushed": "2024-09-15T00:11:20.090838Z"
     },
     {
