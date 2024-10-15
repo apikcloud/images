@@ -1,5 +1,41 @@
 [
     {
+        "name": "16-20241015-enterprise",
+        "full_size": 811364854,
+        "tag_last_pulled": null,
+        "tag_last_pushed": "2024-10-15T00:13:23.52272Z"
+    },
+    {
+        "name": "16-20241015",
+        "full_size": 646808128,
+        "tag_last_pulled": null,
+        "tag_last_pushed": "2024-10-15T00:11:45.489732Z"
+    },
+    {
+        "name": "17-20241015-enterprise",
+        "full_size": 868839181,
+        "tag_last_pulled": null,
+        "tag_last_pushed": "2024-10-15T00:11:41.627278Z"
+    },
+    {
+        "name": "17-20241015",
+        "full_size": 690719040,
+        "tag_last_pulled": null,
+        "tag_last_pushed": "2024-10-15T00:11:03.734424Z"
+    },
+    {
+        "name": "17-20241014-enterprise",
+        "full_size": 868835771,
+        "tag_last_pulled": null,
+        "tag_last_pushed": "2024-10-14T17:07:13.334516Z"
+    },
+    {
+        "name": "17-20241014",
+        "full_size": 690685250,
+        "tag_last_pulled": "2024-10-14T19:09:32.874585Z",
+        "tag_last_pushed": "2024-10-14T17:07:05.771715Z"
+    },
+    {
         "name": "17-20241001-enterprise",
         "full_size": 868645827,
         "tag_last_pulled": "2024-10-14T12:38:41.423466Z",
@@ -98,7 +134,7 @@
     {
         "name": "16-20240109-enterprise-legacy",
         "full_size": 792917063,
-        "tag_last_pulled": "2024-10-09T13:06:46.089508Z",
+        "tag_last_pulled": "2024-10-14T15:53:36.678147Z",
         "tag_last_pushed": "2024-10-03T14:05:11.332006Z"
     },
     {
@@ -296,7 +332,7 @@
     {
         "name": "17-20240915-enterprise",
         "full_size": 877279877,
-        "tag_last_pulled": "2024-10-14T06:00:17.638328Z",
+        "tag_last_pulled": "2024-10-14T14:37:03.779126Z",
         "tag_last_pushed": "2024-10-03T13:56:40.660815Z"
     },
     {
@@ -470,7 +506,7 @@
     {
         "name": "14-20230718-enterprise-legacy",
         "full_size": 731162441,
-        "tag_last_pulled": "2024-10-14T09:26:59.884921Z",
+        "tag_last_pulled": "2024-10-14T14:34:48.021399Z",
         "tag_last_pushed": "2024-09-24T17:07:59.937556Z"
     },
     {
