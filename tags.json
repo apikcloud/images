@@ -2,7 +2,7 @@
     {
         "name": "18-20241015-enterprise",
         "full_size": 930696325,
-        "tag_last_pulled": "2024-10-27T07:03:06.890465Z",
+        "tag_last_pulled": "2024-10-28T12:29:53.741936Z",
         "tag_last_pushed": "2024-10-22T15:04:07.370183Z"
     },
     {
@@ -14,7 +14,7 @@
     {
         "name": "17-20241015-enterprise",
         "full_size": 869127651,
-        "tag_last_pulled": "2024-10-24T14:30:55.858392Z",
+        "tag_last_pulled": "2024-10-28T08:30:24.006274Z",
         "tag_last_pushed": "2024-10-21T19:57:57.436326Z"
     },
     {
@@ -38,7 +38,7 @@
     {
         "name": "17-20240915-enterprise",
         "full_size": 877634643,
-        "tag_last_pulled": "2024-10-23T06:00:48.710784Z",
+        "tag_last_pulled": "2024-10-28T12:42:49.508631Z",
         "tag_last_pushed": "2024-10-21T19:56:31.105396Z"
     },
     {
@@ -74,7 +74,7 @@
     {
         "name": "17-20240701-enterprise",
         "full_size": 872886410,
-        "tag_last_pulled": "2024-10-27T07:00:06.088089Z",
+        "tag_last_pulled": "2024-10-28T07:01:27.97266Z",
         "tag_last_pushed": "2024-10-21T19:53:07.445467Z"
     },
     {
@@ -362,7 +362,7 @@
     {
         "name": "15-20231004-enterprise-legacy",
         "full_size": 772041682,
-        "tag_last_pulled": "2024-10-25T08:47:46.836035Z",
+        "tag_last_pulled": "2024-10-28T11:30:51.020511Z",
         "tag_last_pushed": "2024-10-21T19:04:03.053265Z"
     },
     {
