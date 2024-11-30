@@ -17,25 +17,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-python@v5
+      - uses: apikcloud/dockerhub-fetch-tags-action@main
         with:
-          python-version: "3.10"
-
-      - run: pip install git+https://github.com/royaurelien/pyhub.git@main
-
-      - name: Fetch tags
-        shell: bash
-        env:
-            NAME: ${{ vars.DOCKER_REPOSITORY }}
-            PYHUB_REPO_TAGS_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-            PYHUB_REPO_TAGS_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-            PYHUB_REPO_TAGS_ORG: ${{ secrets.DOCKER_ORG }}
-        run: |
-          result=$(pyhub-cli repo tags $NAME \
-          -f name -f full_size -f tag_last_pulled -f tag_last_pushed \
-          -o json)
-
-          echo "$result" > ./tags.json
+          org: ${{ secrets.DOCKER_ORG }}
+          repo: ${{ vars.DOCKER_REPOSITORY }}
+          login: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Commit & Push changes
         uses: actions-js/push@master

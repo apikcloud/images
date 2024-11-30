@@ -1,165 +1,121 @@
-
-
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Odoo Images</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sortable Tags Table</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <!-- Include DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/searchpanes/2.3.3/css/searchPanes.bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/select/2.1.0/css/select.bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/regular.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/4.0.1/css/fixedHeader.bulma.min.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
-    <style>
-        th {
-          position: relative;
-          cursor: pointer;
-        }
 
-        .sortable-icon {
-          position: absolute;
-          right: 5px;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-
-        .asc .sortable-icon::before {
-          content: '↑';
-          color: #e1e4e7; /* Highlight color for ascending */
-        }
-
-        .desc .sortable-icon::before {
-          content: '↓';
-          color: #dae7f4; /* Highlight color for descending */
-        }
-      </style>
 </head>
-
 <body>
-    <header>
-        <section style="text-align: center;">
-            <h1>Odoo Images</h1>
-        </section>
-    </header>
-    <main>
-        <table id='sortableTable' data-sort-direction="asc">
-            <thead>
-                <tr>
-                    <th scope="col">Tag<span class="sortable-icon"></span></th>
-                    <th scope="col">Size<span class="sortable-icon"></span></th>
-                    <th scope="col">Last pull<span class="sortable-icon"></span></th>
-                    <th scope="col">Last push<span class="sortable-icon"></span></th>
-                </tr>
-            </thead>
-            <tbody id="loop">
-            </tbody>
-        </table>
-    </main>
-</body>
-<script>
-    fetch("./tags.json")
-        .then((response) => response.json())
-        .then((data) => {
-            // data.sort((a, b) => String(a.name) - String(b.name))
-            const frame = document.getElementById("loop");
+  <section class="section">
+    <h1 class="title">Docker Images</h1>
+    <h2 class="subtitle"><strong>Apik</strong>.cloud</h2>
 
-            data.map((element) => {
-                const last_pulled = element.tag_last_pulled ? new Date(element.tag_last_pulled).toLocaleString() : ''
-                const last_pushed = element.tag_last_pushed ? new Date(element.tag_last_pushed).toLocaleString() : ''
+    <table id="tagsTable" class="table is-striped" style="width:100%">
+      <thead>
+        <tr>
+          <th>Version</th>
+          <th>Edition</th>
+          <th>Release</th>
+          <th>Name</th>
+          <th>Image</th>
+          <th>Size</th>
+          <th>Last Updated</th>
+          <th>Last Pulled</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </section>
 
-                let newElem = document.createElement("tr");
-                newElem.id = element.id;
-                newElem.scope = "row";
-                newElem.innerHTML = `
-                    <td>${element.name}</td>
-                    <td>${element.full_size}</td>
-                    <td>${last_pulled}</td>
-                    <td>${last_pushed}</td>
-                    `;
-                frame.appendChild(newElem);
-            });
-        })
-        .catch((error) => console.error("Error loading JSON file", error));
+  <!-- Include jQuery and DataTables JS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bulma.min.js"></script>
+  <script src="https://cdn.datatables.net/searchpanes/2.3.3/js/dataTables.searchPanes.min.js"></script>
+  <script src="https://cdn.datatables.net/searchpanes/2.3.3/js/searchPanes.bulma.min.js"></script>
+  <script src="https://cdn.datatables.net/select/2.1.0/js/dataTables.select.min.js"></script>
+  <script src="https://cdn.datatables.net/select/2.1.0/js/select.bulma.min.js"></script>
+  <script src="https://cdn.datatables.net/fixedheader/4.0.1/js/dataTables.fixedHeader.min.js"></script>
+  <script src="https://cdn.datatables.net/fixedheader/4.0.1/js/fixedHeader.bulma.min.js"></script>
 
-        // Function to parse table cell content and convert to numeric value
-        function parseTableCell(cell) {
-          var cellContent = cell.textContent || cell.innerText;
-          // Remove commas from the number string
-          var numericValue = parseFloat(cellContent.replace(/,/g, ""));
-          return isNaN(numericValue) ? cellContent.toLowerCase() : numericValue;
-        }
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        // Fetch the JSON data
+        const response = await fetch('./tags.json');
+        const tags = await response.json();
 
-        // Function to sort the table
-        function sortTable(columnIndex, table) {
-          var rows, switching, i, x, y, shouldSwitch;
-          switching = true;
-          var direction = table.getAttribute("data-sort-direction") === "asc" ? "desc" : "asc";
+        let data = tags.map(tag => ({
+          id: tag.id,
+          name: tag.name,
+          image: `<a href="https://hub.docker.com/r/${tag.image}" target="_blank">${tag.image}</a> <button class="button is-small copy-btn dtsp-searchIcon" data-image="${tag.image}">Copy</button>`,
+          size: (tag.full_size / 1024 / 1024).toFixed(2) + ' MB', // Convert to MB
+          status: tag.tag_status,
+          last_pulled: new Date(tag.tag_last_pulled).toLocaleString(),
+          last_pushed: new Date(tag.tag_last_pushed).toLocaleString(),
+          last_updated: new Date(tag.last_updated).toLocaleString(),
+          digest: tag.digest,
+          version: tag.majorVersion,
+          edition: tag.edition == 'community' ? `<span class="tag is-dark"> ${tag.edition} </span>` : `<span class="tag is-primary"> ${tag.edition} </span>`,
+          // release: tag.release
+          release: new Date(tag.release.replace(/^(\d{4})(\d{2})(\d{2})$/, '$1-$2-$3')).toLocaleDateString()
+        }));
 
-          while (switching) {
-            switching = false;
-            rows = table.getElementsByTagName("tr");
-
-            for (i = 1; i < rows.length - 1; i++) {
-              shouldSwitch = false;
-
-              x = rows[i].getElementsByTagName("td")[columnIndex];
-              y = rows[i + 1].getElementsByTagName("td")[columnIndex];
-
-              // Compare values based on data type
-              x = parseTableCell(x);
-              y = parseTableCell(y);
-
-              if ((direction === 'asc' && x > y) || (direction === 'desc' && x < y)) {
-                shouldSwitch = true;
-                break;
-              }
-            }
-
-            if (shouldSwitch) {
-              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-              switching = true;
-            }
+        const table = $('#tagsTable').DataTable({
+          data: data,
+          columns: [
+            { data: 'version' },
+            { data: 'edition' },
+            { data: 'release' },
+            { data: 'name' },
+            { data: 'image' },
+            { data: 'size' },
+            { data: 'last_updated' },
+            { data: 'last_pulled' }
+          ],
+          columnDefs: [
+            { targets: [0], className: 'has-text-left' },
+          ],
+          order: [[0, 'desc'],[2, 'desc']],
+          layout: {
+            top1: 'searchPanes',
+            topStart: 'search',
+            topEnd: 'pageLength'
+          },
+          searchPanes: {
+              initCollapsed: true
+          },
+          fixedHeader: {
+            header: true,
+            headerOffset: $('#fixed').height()
+          },
+          paging: true,
+          pageLength: 10,
+          info: true,
+          initComplete: function (settings, json) {
+            $('#dt-search-0').focus();
           }
+        });
 
-          // Toggle sort direction and update icon
-          table.setAttribute("data-sort-direction", direction);
-          updateSortIcons(table, columnIndex, direction);
-        }
-
-        // Function to check if a value is numeric
-        function isNumeric(value) {
-          return !isNaN(parseFloat(value)) && isFinite(value);
-        }
-
-        // Function to update sort icons
-        function updateSortIcons(table, columnIndex, direction) {
-          var headers = table.getElementsByTagName("th");
-
-          // Remove existing icons
-          Array.from(headers).forEach(function (header) {
-            header.classList.remove('asc', 'desc');
-          });
-
-          // Add icon to the clicked header
-          headers[columnIndex].classList.add(direction);
-        }
-
-        // Function to make tables sortable
-        function makeTablesSortable() {
-          var tables = document.querySelectorAll("table");
-
-          tables.forEach(function (table) {
-            table.setAttribute("data-sort-direction", "asc");
-
-            var headers = table.getElementsByTagName("th");
-
-            Array.from(headers).forEach(function (header, index) {
-              header.onclick = function () {
-                sortTable(index, table);
-              };
-            //   header.innerHTML += '<span class="sortable-icon"></span>';
-            });
-          });
-        }
-
-        // Make all tables on the page sortable
-        makeTablesSortable();
-</script>
+        // Add event listener for copy buttons
+        $('#tagsTable tbody').on('click', '.copy-btn', function() {
+          const image = $(this).data('image');
+          navigator.clipboard.writeText(image)
+        });
+      } catch (error) {
+        console.error('Error loading tags.json:', error);
+      }
+    });
+  </script>
+</body>
 </html>
