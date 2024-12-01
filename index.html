@@ -1,121 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sortable Tags Table</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-  <!-- Include DataTables CSS -->
-  <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bulma.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/searchpanes/2.3.3/css/searchPanes.bulma.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/select/2.1.0/css/select.bulma.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/regular.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/4.0.1/css/fixedHeader.bulma.min.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortable Tags Table</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <!-- Include DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/searchpanes/2.3.3/css/searchPanes.bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/2.1.0/css/select.bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/4.0.1/css/fixedHeader.bulma.min.css">
+  </head>
+  <body>
+    <section class="section">
+      <h1 class="title">Docker Images</h1>
+      <h2 class="subtitle"><strong>Apik</strong>.cloud</h2>
 
+      <table id="tagsTable" class="table is-striped" style="width:100%">
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Edition</th>
+            <th>Collection</th>
+            <th>Release</th>
+            <th>Name</th>
+            <th>Size</th>
+            <th>State</th>
+            <th>Last Updated</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </section>
 
-</head>
-<body>
-  <section class="section">
-    <h1 class="title">Docker Images</h1>
-    <h2 class="subtitle"><strong>Apik</strong>.cloud</h2>
+    <!-- Include jQuery and DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bulma.min.js"></script>
+    <script src="https://cdn.datatables.net/searchpanes/2.3.3/js/dataTables.searchPanes.min.js"></script>
+    <script src="https://cdn.datatables.net/searchpanes/2.3.3/js/searchPanes.bulma.min.js"></script>
+    <script src="https://cdn.datatables.net/select/2.1.0/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/select/2.1.0/js/select.bulma.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/4.0.1/js/dataTables.fixedHeader.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/4.0.1/js/fixedHeader.bulma.min.js"></script>
 
-    <table id="tagsTable" class="table is-striped" style="width:100%">
-      <thead>
-        <tr>
-          <th>Version</th>
-          <th>Edition</th>
-          <th>Release</th>
-          <th>Name</th>
-          <th>Image</th>
-          <th>Size</th>
-          <th>Last Updated</th>
-          <th>Last Pulled</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
-  </section>
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        try {
+          // Fetch the JSON data
+          const response = await fetch('./tags.json');
+          const tags = await response.json();
 
-  <!-- Include jQuery and DataTables JS -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bulma.min.js"></script>
-  <script src="https://cdn.datatables.net/searchpanes/2.3.3/js/dataTables.searchPanes.min.js"></script>
-  <script src="https://cdn.datatables.net/searchpanes/2.3.3/js/searchPanes.bulma.min.js"></script>
-  <script src="https://cdn.datatables.net/select/2.1.0/js/dataTables.select.min.js"></script>
-  <script src="https://cdn.datatables.net/select/2.1.0/js/select.bulma.min.js"></script>
-  <script src="https://cdn.datatables.net/fixedheader/4.0.1/js/dataTables.fixedHeader.min.js"></script>
-  <script src="https://cdn.datatables.net/fixedheader/4.0.1/js/fixedHeader.bulma.min.js"></script>
+          const states = {
+            'new': 'is-info',
+            'updated': 'is-warning',
+            'deleted': 'is-danger',
+          };
 
-  <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-      try {
-        // Fetch the JSON data
-        const response = await fetch('./tags.json');
-        const tags = await response.json();
-
-        let data = tags.map(tag => ({
-          id: tag.id,
-          name: tag.name,
-          image: `<a href="https://hub.docker.com/r/${tag.image}" target="_blank">${tag.image}</a> <button class="button is-small copy-btn dtsp-searchIcon" data-image="${tag.image}">Copy</button>`,
-          size: (tag.full_size / 1024 / 1024).toFixed(2) + ' MB', // Convert to MB
-          status: tag.tag_status,
-          last_pulled: new Date(tag.tag_last_pulled).toLocaleString(),
-          last_pushed: new Date(tag.tag_last_pushed).toLocaleString(),
-          last_updated: new Date(tag.last_updated).toLocaleString(),
-          digest: tag.digest,
-          version: tag.majorVersion,
-          edition: tag.edition == 'community' ? `<span class="tag is-dark"> ${tag.edition} </span>` : `<span class="tag is-primary"> ${tag.edition} </span>`,
-          // release: tag.release
-          release: new Date(tag.release.replace(/^(\d{4})(\d{2})(\d{2})$/, '$1-$2-$3')).toLocaleDateString()
-        }));
-
-        const table = $('#tagsTable').DataTable({
-          data: data,
-          columns: [
-            { data: 'version' },
-            { data: 'edition' },
-            { data: 'release' },
-            { data: 'name' },
-            { data: 'image' },
-            { data: 'size' },
-            { data: 'last_updated' },
-            { data: 'last_pulled' }
-          ],
-          columnDefs: [
-            { targets: [0], className: 'has-text-left' },
-          ],
-          order: [[0, 'desc'],[2, 'desc']],
-          layout: {
-            top1: 'searchPanes',
-            topStart: 'search',
-            topEnd: 'pageLength'
-          },
-          searchPanes: {
-              initCollapsed: true
-          },
-          fixedHeader: {
-            header: true,
-            headerOffset: $('#fixed').height()
-          },
-          paging: true,
-          pageLength: 10,
-          info: true,
-          initComplete: function (settings, json) {
-            $('#dt-search-0').focus();
+          function getState(state) {
+            return state in states ? `<span class="tag ${states[state]}"> ${state} </span>` : '';
           }
-        });
 
-        // Add event listener for copy buttons
-        $('#tagsTable tbody').on('click', '.copy-btn', function() {
-          const image = $(this).data('image');
-          navigator.clipboard.writeText(image)
-        });
-      } catch (error) {
-        console.error('Error loading tags.json:', error);
-      }
-    });
-  </script>
-</body>
+          let data = tags.map(tag => ({
+            id: tag.id,
+            org: tag.org,
+            repo: tag.repo,
+            name: tag.name,
+            image: tag.image,
+            size: tag.full_size,
+            status: tag.tag_status,
+            last_updated: tag.last_updated,
+            digest: tag.digest,
+            version: tag.version,
+            edition: tag.edition,
+            release: tag.release.replace(/^(\d{4})(\d{2})(\d{2})$/, '$1-$2-$3'),
+            state: tag.state,
+            collection: tag.collection,
+          }));
+
+          const table = $('#tagsTable').DataTable({
+            data: data,
+            columns: [
+              { data: 'version' },
+              { data: 'edition' },
+              { data: 'collection' },
+              { data: 'release' },
+              { data: 'name' },
+              { data: 'size' },
+              { data: 'state' },
+              { data: 'last_updated' },
+            ],
+            columnDefs: [
+              { targets: [0,3], className: 'has-text-left' },
+              { targets: [3,7], render: DataTable.render.date() },
+              { targets: [7,8], className: 'has-text-right' },
+              {
+                targets: 1,
+                data: 'edition',
+                render: function (data, type, row, meta) {
+                  return `<span class="tag ${data === 'community' ? 'is-dark' : 'is-primary'}"> ${data} </span>`
+                }
+              },
+              {
+                targets: 4,
+                data: 'name',
+                render: function (data, type, row, meta) {
+                  const url = `https://hub.docker.com/layers/${row.org}/${row.repo}/${data}/images/${row.digest}?context=explore`
+                  return `<a href="${url}" target="_blank">${data}</a>`
+                }
+              },
+              {
+                targets: 5,
+                data: 'size',
+                render: function (data, type, row, meta) {
+                  // Convert to MB
+                  return (data / 1024 / 1024).toFixed(2) + ' MB'
+                }
+              },
+              {
+                targets: 6,
+                data: 'state',
+                render: function (data, type, row, meta) {
+                  return getState(data)
+                }
+              },
+              {
+                targets: 8,
+                data: null,
+                searchable: false,
+                orderable: false,
+                render: function (data, type, row, meta) {
+                  return `<button class="button is-small copy-btn dtsp-searchIcon" data-image="${row.image}">Copy</button>`
+                }
+              }
+            ],
+            order: [[0, 'desc'],[3, 'desc']],
+            layout: {
+              top1: {
+                searchPanes: {
+                  controls: false,
+                  initCollapsed: true
+                }
+              },
+              topStart: 'search',
+              topEnd: 'pageLength'
+            },
+            fixedHeader: {
+              header: true,
+              headerOffset: $('#fixed').height()
+            },
+            paging: true,
+            pageLength: 10,
+            info: true,
+            initComplete: function (settings, json) {
+              $('#dt-search-0').focus();
+            }
+          });
+
+          // Add event listener for copy buttons
+          $('#tagsTable tbody').on('click', '.copy-btn', function() {
+            const image = $(this).data('image');
+            navigator.clipboard.writeText(image)
+          });
+        } catch (error) {
+          console.error('Error loading tags.json:', error);
+        }
+      });
+    </script>
+  </body>
 </html>
