@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "id": 805514613,
+    "last_updated": "2024-12-02T11:58:19.209037Z",
+    "name": "17-20241115-enterprise",
+    "org": "apik",
+    "repo": "dev",
+    "image": "apik/dev:17-20241115-enterprise",
+    "full_size": 970774538,
+    "digest": "sha256:c18ecce2a194ef8aaf690b55af156655308a9afdfc98b795df7fdd17e0e502bd",
+    "state": "new",
+    "collection": "development",
+    "version": 17,
+    "edition": "enterprise",
+    "release": "20241115"
+  }
+]
