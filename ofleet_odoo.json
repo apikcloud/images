@@ -1,5 +1,35 @@
 [
   {
+    "id": 904500840,
+    "last_updated": "2025-05-23T14:36:57.62125Z",
+    "name": "15-20241101-enterprise-legacy",
+    "org": "ofleet",
+    "repo": "odoo",
+    "image": "ofleet/odoo:15-20241101-enterprise-legacy",
+    "full_size": 776728523,
+    "digest": "sha256:1cce1dd06fd2f6fb23b06035a079c347de1791f6932a9fde3018798276e4158e",
+    "state": "new",
+    "collection": "ofleet",
+    "version": 15,
+    "edition": "enterprise",
+    "release": "20241101"
+  },
+  {
+    "id": 904500808,
+    "last_updated": "2025-05-23T14:36:54.441849Z",
+    "name": "15-20241101-legacy",
+    "org": "ofleet",
+    "repo": "odoo",
+    "image": "ofleet/odoo:15-20241101-legacy",
+    "full_size": 706983208,
+    "digest": "sha256:05150b05795b400a6ee5ae350f6e31d3e77b24d6b0e6cdbd55b161bf4f373cb6",
+    "state": "new",
+    "collection": "ofleet",
+    "version": 15,
+    "edition": "community",
+    "release": "20241101"
+  },
+  {
     "id": 900375305,
     "last_updated": "2025-05-16T15:20:08.021693Z",
     "name": "14-20240624",
