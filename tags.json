@@ -1779,6 +1779,36 @@
     "release": "20171010"
   },
   {
+    "id": 917168542,
+    "last_updated": "2025-06-15T00:18:37.830756Z",
+    "name": "17-20250615-enterprise",
+    "org": "ofleet",
+    "repo": "odoo",
+    "image": "ofleet/odoo:17-20250615-enterprise",
+    "full_size": 881362916,
+    "digest": "sha256:2de7ae4f2e4de8e552087d8ee53ce1a2335dca6069e725355e1699d78b365942",
+    "state": "new",
+    "collection": "ofleet",
+    "version": 17,
+    "edition": "enterprise",
+    "release": "20250615"
+  },
+  {
+    "id": 917167060,
+    "last_updated": "2025-06-15T00:13:09.469893Z",
+    "name": "17-20250615",
+    "org": "ofleet",
+    "repo": "odoo",
+    "image": "ofleet/odoo:17-20250615",
+    "full_size": 698733482,
+    "digest": "sha256:ddce62e2fdcbadf265b4fe3e58226e65df9bb04ce6765a00b4ac9573d988378d",
+    "state": "new",
+    "collection": "ofleet",
+    "version": 17,
+    "edition": "community",
+    "release": "20250615"
+  },
+  {
     "id": 904500840,
     "last_updated": "2025-05-23T14:36:57.62125Z",
     "name": "15-20241101-enterprise-legacy",
