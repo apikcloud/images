@@ -1824,6 +1824,36 @@
     "release": "20171010"
   },
   {
+    "id": 778656553,
+    "last_updated": "2025-07-08T13:47:18.245606Z",
+    "name": "10-20211123-legacy",
+    "org": "ofleet",
+    "repo": "odoo",
+    "image": "ofleet/odoo:10-20211123-legacy",
+    "full_size": 296726498,
+    "digest": "sha256:7bc6a63e224a1bf4a3491cd5035ecb8138f55444fae50f09127868e7b9f0b041",
+    "state": "updated",
+    "collection": "ofleet",
+    "version": 10,
+    "edition": "community",
+    "release": "20211123"
+  },
+  {
+    "id": 772319892,
+    "last_updated": "2025-07-08T13:47:18.244823Z",
+    "name": "10-20200827",
+    "org": "ofleet",
+    "repo": "odoo",
+    "image": "ofleet/odoo:10-20200827",
+    "full_size": 296727048,
+    "digest": "sha256:c7ad6bb2c052cd3ac66bede59ae13defbeea4d24c196412d391d70db17c6aebc",
+    "state": "updated",
+    "collection": "ofleet",
+    "version": 10,
+    "edition": "community",
+    "release": "20200827"
+  },
+  {
     "id": 926190021,
     "last_updated": "2025-07-01T00:32:20.253979Z",
     "name": "17-20250701",
@@ -2512,21 +2542,6 @@
     "version": 18,
     "edition": "community",
     "release": "20250201"
-  },
-  {
-    "id": 772319892,
-    "last_updated": "2025-01-21T18:41:43.215361Z",
-    "name": "10-20200827",
-    "org": "ofleet",
-    "repo": "odoo",
-    "image": "ofleet/odoo:10-20200827",
-    "full_size": 296701373,
-    "digest": "sha256:5a498a181ee315e28fbe0f0bc599ca14ec1efceebb0e367237a1e5a8fd4df04f",
-    "state": null,
-    "collection": "ofleet",
-    "version": 10,
-    "edition": "community",
-    "release": "20200827"
   },
   {
     "id": 778673767,
@@ -4477,20 +4492,5 @@
     "version": 16,
     "edition": "community",
     "release": "20250101"
-  },
-  {
-    "id": 778656553,
-    "last_updated": "2024-10-21T18:05:12.577385Z",
-    "name": "10-20211123-legacy",
-    "org": "ofleet",
-    "repo": "odoo",
-    "image": "ofleet/odoo:10-20211123-legacy",
-    "full_size": 296704466,
-    "digest": "sha256:0efe21604c7052832a1f221162e12c1418a749d5589a372e544fb644f1dd740a",
-    "state": null,
-    "collection": "ofleet",
-    "version": 10,
-    "edition": "community",
-    "release": "20211123"
   }
 ]
