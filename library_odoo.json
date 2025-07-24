@@ -1,13 +1,13 @@
 [
   {
     "id": 933139190,
-    "last_updated": "2025-07-22T04:12:13.900827Z",
+    "last_updated": "2025-07-23T22:12:13.887765Z",
     "name": "16.0-20250710",
     "org": "library",
     "repo": "odoo",
     "image": "odoo:16.0-20250710",
     "full_size": 585146704,
-    "digest": "sha256:34486f3dc12c968ad7380c78bc668370e06b350779e0de048ae8b75f06db42e4",
+    "digest": "sha256:9d67d8a6aa084b19feeea82263174c0f2f94fc653456e154bc1a46fd6bc78d4e",
     "state": "updated",
     "collection": "official",
     "version": 16,
@@ -16,33 +16,33 @@
   },
   {
     "id": 308286725,
-    "last_updated": "2025-07-22T04:12:12.922269Z",
+    "last_updated": "2025-07-23T22:12:12.962308Z",
     "name": "16.0",
     "org": "library",
     "repo": "odoo",
     "image": "odoo:16.0",
     "full_size": 585146704,
-    "digest": "sha256:34486f3dc12c968ad7380c78bc668370e06b350779e0de048ae8b75f06db42e4",
+    "digest": "sha256:9d67d8a6aa084b19feeea82263174c0f2f94fc653456e154bc1a46fd6bc78d4e",
     "state": "updated",
     "collection": "official",
     "version": 16,
     "edition": "community",
-    "release": "20250722"
+    "release": "20250723"
   },
   {
     "id": 308286709,
-    "last_updated": "2025-07-22T04:12:11.829585Z",
+    "last_updated": "2025-07-23T22:12:11.880931Z",
     "name": "16",
     "org": "library",
     "repo": "odoo",
     "image": "odoo:16",
     "full_size": 585146704,
-    "digest": "sha256:34486f3dc12c968ad7380c78bc668370e06b350779e0de048ae8b75f06db42e4",
+    "digest": "sha256:9d67d8a6aa084b19feeea82263174c0f2f94fc653456e154bc1a46fd6bc78d4e",
     "state": "updated",
     "collection": "official",
     "version": 16,
     "edition": "community",
-    "release": "20250722"
+    "release": "20250723"
   },
   {
     "id": 933139225,
