@@ -1,5 +1,20 @@
 [
   {
+    "id": 989148627,
+    "last_updated": "2025-10-10T14:39:39.53461Z",
+    "name": "19.0-20251010-enterprise",
+    "org": "apik",
+    "repo": "odoo",
+    "image": "apik/odoo:19.0-20251010-enterprise",
+    "full_size": 787421104,
+    "digest": "sha256:199c382470e323c5a3dfb2a3057a6bd3f58b2c6986ee19c67d96dfcec8f9da9a",
+    "state": "new",
+    "collection": "production",
+    "version": 19,
+    "edition": "enterprise",
+    "release": "20251010"
+  },
+  {
     "id": 986744132,
     "last_updated": "2025-10-07T10:19:02.249742Z",
     "name": "19.0-20251007-enterprise",
