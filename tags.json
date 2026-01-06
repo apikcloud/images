@@ -23,7 +23,7 @@
     "image": "apik/odoo:19.0-20260101-enterprise",
     "full_size": 805356787,
     "digest": "sha256:dd09c3c4cb2784e5cb6cff4e682761883ade2ad2619fbd76e2426720e462a330",
-    "state": "new",
+    "state": null,
     "collection": "production",
     "version": 19,
     "edition": "enterprise",
