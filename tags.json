@@ -23,7 +23,7 @@
     "image": "apik/odoo:18.0-20260720-enterprise",
     "full_size": 794084336,
     "digest": "sha256:c512ea67bce8ff113064f74d3029ceea07a9b804cf789f852a3819aca2ff94a8",
-    "state": "new",
+    "state": null,
     "collection": "production",
     "version": 18,
     "edition": "enterprise",
