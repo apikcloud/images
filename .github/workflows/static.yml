@@ -26,7 +26,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment-retry.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -40,4 +40,13 @@ jobs:
           path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
+        # Artifact listing can lag behind upload finalization (actions/deploy-pages#451)
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+      - name: Wait for artifact listing
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 30
+      - name: Deploy to GitHub Pages (retry)
+        id: deployment-retry
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@v4
