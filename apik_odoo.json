@@ -1,5 +1,35 @@
 [
   {
+    "id": 1421929366,
+    "last_updated": "2026-11-25T16:38:13.323676Z",
+    "name": "16.0-20261019-enterprise",
+    "org": "apik",
+    "repo": "odoo",
+    "image": "apik/odoo:16.0-20261019-enterprise",
+    "full_size": 587489051,
+    "digest": "sha256:71ea609a088f2894c4dff7236181bbaeb06dfc6052d22ac71bf892445179f5e8",
+    "state": "new",
+    "collection": "production",
+    "version": 16,
+    "edition": "enterprise",
+    "release": "20261019"
+  },
+  {
+    "id": 1421929262,
+    "last_updated": "2026-11-25T16:38:08.55716Z",
+    "name": "16.0-20261019",
+    "org": "apik",
+    "repo": "odoo",
+    "image": "apik/odoo:16.0-20261019",
+    "full_size": 527907441,
+    "digest": "sha256:2ef340c082dd336f772702b7d2f5385c85a3763122cee87d2204dd4b824a3dd8",
+    "state": "new",
+    "collection": "production",
+    "version": 16,
+    "edition": "community",
+    "release": "20261019"
+  },
+  {
     "id": 1421228843,
     "last_updated": "2026-11-25T08:40:00.624946Z",
     "name": "17.0-20261124-enterprise",
